@@ -29,8 +29,8 @@ app.post("/add-todo", async function (req, res) {
     })
 })
 
-app.get("/getTodos", function (req, res){
-    const todos = Todo.find({})
+app.get("/getTodos",async function (req, res){
+    const todos = await Todo.find({})
     res.json({
         todos: todos
     })
